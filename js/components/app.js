@@ -1,5 +1,5 @@
-import { estado } from "./estado.js";
-import { CartaoProduto } from "./cartao_produtos.js";
+import { estado } from './estado.js';
+import { CartaoProduto } from './cartao_produtos.js';
 
 export function App() {
   const container = document.createElement("main");

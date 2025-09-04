@@ -16,7 +16,8 @@ header {
   min-height: 70px;
 }
 
-header button {
+header button,
+nav button {
   background: #3F5EFB;
   background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
   color: #fff;
@@ -26,7 +27,8 @@ header button {
   border-radius: 10px;
 }
 
-header button:hover {
+header button:hover,
+nav button:hover {
   background: #22C1C3;
   background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
 }
@@ -99,7 +101,7 @@ header .switch-btn.dark {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -155,4 +157,59 @@ body.dark-mode .card {
 
 .site-header img {
   border-radius: 5px;
+}
+
+
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.cabecalho input,
+.cabecalho select,
+.cabecalho button {
+  flex: 1 1 200px;
+  min-width: 150px;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    text-align: left;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 8px;
+  }
+
+  .cabecalho input,
+  .cabecalho select,
+  .cabecalho button {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    box-sizing: border-box;
+    height: auto;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
 }

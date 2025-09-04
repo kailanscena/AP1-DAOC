@@ -1,8 +1,8 @@
-import { buscarProdutos } from "../api/api.js";
-import { estado } from "./estado.js";
-import { App } from "./app.js";
-import { Cabecalho } from "./cabecalho.js";
+import { buscarProdutos } from '../api/api.js';
 import { criarHeader } from './header.js';
+import { renderCabecalho } from './cabecalho.js';
+import { App } from './app.js';
+import { estado } from './estado.js';
 import { inicializarTema } from './tema.js';
 
 const root = document.getElementById("app");
@@ -17,7 +17,7 @@ async function iniciar() {
   root.innerHTML = "<p>Carregando...</p>";
   estado.produtos = await buscarProdutos();
   root.innerHTML = "";
-  const cabecalho = Cabecalho();
+  const cabecalho = renderCabecalho();
   root.appendChild(cabecalho);
   root.appendChild(App());
   const categorias = [...new Set(estado.produtos.map(p => p.category))];

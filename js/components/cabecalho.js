@@ -1,50 +1,49 @@
-import { estado } from "./estado.js";
+import { estado } from './estado.js';
 
-export function Cabecalho() {
-  const header = document.createElement("header");
-
-  header.innerHTML = `
-    <nav>
-      <button id="btn-produtos">Produtos</button>
-      <button id="btn-favoritos">Favoritos</button>
-      <input type="text" id="filtro-nome" placeholder="Buscar por nome...">
-      <select id="filtro-categoria">
-        <option value="">Todas categorias</option>
-      </select>
-      <input type="number" id="filtro-preco-min" placeholder="Preço min">
-      <input type="number" id="filtro-preco-max" placeholder="Preço max">
-    </nav>
+export function renderCabecalho() {
+  const cabecalho = document.createElement("nav");
+  cabecalho.id = "cabecalho";
+  cabecalho.className = "cabecalho";
+  cabecalho.innerHTML = `
+    <input id="filtro-nome" placeholder="Buscar produto..." />
+    <select id="filtro-categoria">
+      <option value="">Todas categorias</option>
+    </select>
+    <input id="filtro-preco-min" type="number" placeholder="Preço mínimo" />
+    <input id="filtro-preco-max" type="number" placeholder="Preço máximo" />
+    <button id="btn-favoritos">Favoritos</button>
+    <button id="btn-produtos">Produtos</button>
   `;
 
-  header.querySelector("#btn-produtos").addEventListener("click", () => {
+  cabecalho.querySelector("#btn-produtos").addEventListener("click", () => {
     estado.pagina = "produtos";
     window.dispatchEvent(new Event("estadoAtualizado"));
   });
 
-  header.querySelector("#btn-favoritos").addEventListener("click", () => {
+  cabecalho.querySelector("#btn-favoritos").addEventListener("click", () => {
     estado.pagina = "favoritos";
     window.dispatchEvent(new Event("estadoAtualizado"));
   });
 
-  header.querySelector("#filtro-nome").addEventListener("input", (e) => {
+  cabecalho.querySelector("#filtro-nome").addEventListener("input", (e) => {
     estado.filtroNome = e.target.value.toLowerCase();
     window.dispatchEvent(new Event("estadoAtualizado"));
   });
 
-  header.querySelector("#filtro-categoria").addEventListener("change", (e) => {
+  cabecalho.querySelector("#filtro-categoria").addEventListener("change", (e) => {
     estado.filtroCategoria = e.target.value;
     window.dispatchEvent(new Event("estadoAtualizado"));
   });
 
-  header.querySelector("#filtro-preco-min").addEventListener("input", (e) => {
+  cabecalho.querySelector("#filtro-preco-min").addEventListener("input", (e) => {
     estado.filtroPrecoMin = e.target.value ? parseFloat(e.target.value) : null;
     window.dispatchEvent(new Event("estadoAtualizado"));
   });
 
-  header.querySelector("#filtro-preco-max").addEventListener("input", (e) => {
+  cabecalho.querySelector("#filtro-preco-max").addEventListener("input", (e) => {
     estado.filtroPrecoMax = e.target.value ? parseFloat(e.target.value) : null;
     window.dispatchEvent(new Event("estadoAtualizado"));
   });
 
-  return header;
+  return cabecalho;
 }
