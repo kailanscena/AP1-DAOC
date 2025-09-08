@@ -29,7 +29,7 @@ export function criarHeader() {
     btnModoNoturno.className = 'switch-btn';
 
     const icon = document.createElement('div');
-    icon.className = 'icon sun'; // Começa com o ícone do sol
+    icon.className = 'icon sun'; 
 
     btnModoNoturno.appendChild(icon);
     switchDiv.appendChild(btnModoNoturno);
