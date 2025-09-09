@@ -51,7 +51,7 @@ ap1 componentes/
 
 1. **Clone o repositório:**
    ```bash
-   git clone <url-do-repositório>
+   git clone https://github.com/kailanscena/AP1-DAOC.git
    ```
 
 2. **Abra a pasta do projeto no VS Code ou outro editor.**
@@ -69,4 +69,3 @@ Pronto! A aplicação estará funcionando e você poderá navegar, filtrar, favo
 - O projeto utiliza apenas JavaScript puro, sem frameworks.
 - Os favoritos são salvos no navegador, mesmo após fechar a página.
 - O botão de modo noturno está no canto superior direito, com visual de switch.
-- Para dúvidas ou sugestões, abra uma issue ou envie um pull request..
